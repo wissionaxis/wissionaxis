@@ -2,32 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:where(body, html) {
+  overflow-x: hidden;
+ 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:where(body, html)::-webkit-scrollbar {
+  width: 0px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+img {
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  background-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+
+
+  .fontless {
+    font-weight: 300 !important;
   }
+
+  .trans {
+    transition: 1s ease-in-out;
+  }
+
+
+  .glasser {
+    background: rgba(255, 255, 255, 0.034);
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .flex-all {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .flex-bet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .letter {
+    letter-spacing: 1px;
+  }
+
+  .borders {
+    border: 1px solid red;
+  }
+
+  .flex-colm {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  .space {
+    word-spacing: 5px;
+  }
+
+  .shadow {
+    filter: drop-shadow(0 0 5px #64dcdd);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border-radius: 10px;
+    /* border: 1px solid rgba(255, 255, 255, 0.18); */
+  }
+  .ScrollerColor::-webkit-scrollbar{
+    width: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  .ScrollerColor::-webkit-scrollbar-track{
+    width: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  .Scroller::-webkit-scrollbar-thumb{
+    background-color: #000;
+    width: 10px;
+  }
+
 }
