@@ -26,7 +26,8 @@ const Navbar = () => {
         height: '0',
         ease: 'Power4.easeInOut',
         duration: 1,
-        padding:0
+        // padding:0,
+        border:'none'
       });
     }
   }, [isOpen]);
@@ -66,14 +67,14 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className={`navHeight absolute top-24 left-10 right-0 py-4 flex-colm rounded-[20px] border-none  w-[85%] h-0 z-[99999] bg-[#3560B3] overflow-hidden `}>
+        <div className={`navHeight absolute top-24 left-10 right-0  flex-colm rounded-[20px] border-none  w-[85%] z-[99999] bg-[#3560B3] overflow-hidden `}>
           {isOpen && Links.map((t: LinksType, index: number) => (
-            <Link href={t.linked} key={index} className="text-white  hover:text-gray-300 transition-colors p-2 w-full text-center">
+            <Link href={t.linked} key={index} className={`text-white  hover:text-gray-300 transition-colors p-2 w-full text-center ${index ===0 && 'mt-3'}`}>
               {t.name}
             </Link>
           ))}
           {isOpen && (
-            <Link href="/" className="block bg-white text-blue-600 py-2 px-4  rounded-full hover:bg-gray-100 transition-colors mt-2">
+            <Link href="/" className="block mb-3 bg-white text-blue-600 py-2 px-4  rounded-full hover:bg-gray-100 transition-colors mt-2">
               Register
             </Link>
           )}

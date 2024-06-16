@@ -28,6 +28,12 @@ body{
 
 @layer utilities {
 
+  .textColor{
+    background: linear-gradient(90deg, #7092D3 0%, #3C424E 100%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+  }
+
 
   .fontless {
     font-weight: 300 !important;
