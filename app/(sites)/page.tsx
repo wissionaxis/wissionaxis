@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { SectionType } from '../constants/type';
 import { useEffect } from 'react';
 import gsap from 'gsap';
-import { Power4 } from 'gsap';
+import { Power4 ,Power3} from 'gsap';
 const Home = () => {
   const images = [
     '/path/to/your/image1.png',
@@ -39,7 +39,7 @@ const Home = () => {
       translateX: '0',
       opacity: 1,
       duration: 1,
-      ease:'back.out',
+      ease:"power4.inOut",
       delay: 0.5,
     }).fromTo('.Hero-Header p', {
       translateX: '-200px',
