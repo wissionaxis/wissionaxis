@@ -41,16 +41,18 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="flex items-center z-[999] justify-center h-[11vh] w-full p-5 relative bg-white  ">
-      <nav className="bg-[#3560B3] w-full max-w-6xl p-4 flex justify-between items-center rounded-full shadow-md">
+    <header className="flex items-center z-[999] justify-center h-[16vh] w-full p-3 relative bg-white  ">
+      <nav className="bg-[#3560B3] w-[95vw]  p-6 flex justify-between items-center rounded-full shadow-md">
+        {/* log0 */}
         <div className="flex items-center text-white text-2xl font-bold">
           <Link href="/" className="flex items-center h-[1.2rem] ml-3">
             <Image src={Logo} alt="Logo" width={40} height={40} className="h-auto w-auto" />
           </Link>
         </div>
-        <div className="hidden md:flex space-x-6 text-white">
+        {/* log0 */}
+        <div className="hidden md:flex space-x-12 text-white">
           {Links.map((t: LinksType, index: number) => (
-            <Link href={t.linked} key={index} className="hover:text-gray-300 transition-colors">
+            <Link href={t.linked} key={index} className="hover:text-gray-300 transition-colors text-sm font-light ">
               {t.name}
             </Link>
           ))}
