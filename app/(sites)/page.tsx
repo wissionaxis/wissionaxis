@@ -4,6 +4,10 @@ import { SectionType } from '../constants/type';
 import { useEffect } from 'react';
 import gsap from 'gsap';
 import { Power4 ,Power3} from 'gsap';
+import WhoWeAre from '../components/landing_components/Whoweare';
+import NetworkBuildScale from '../components/landing_components/Network';
+import OurEvents from '../components/landing_components/Events';
+import Newsletter from '../components/landing_components/Newsletter';
 const Home = () => {
   const images = [
     '/path/to/your/image1.png',
@@ -86,6 +90,7 @@ const Home = () => {
 
 
   return (
+    <>
     <div className="min-h-screen bg-white py-10 flex justify-center items-center">
       <div className="w-[95%] min-h-[70vh] flex flex-col md:flex-row">
         <div className="container mx-auto px-4 md:px-8 lg:px-16 md:w-2/3">
@@ -137,7 +142,13 @@ const Home = () => {
           ))}
         </div>
       </div>
+     
     </div>
+     <WhoWeAre/>
+     <NetworkBuildScale/>
+     <OurEvents/>
+     <Newsletter/>
+     </>
   );
 };
 
