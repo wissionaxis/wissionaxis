@@ -39,7 +39,7 @@ const Home = () => {
       translateX: '0',
       opacity: 1,
       duration: 1,
-      ease:"power4.inOut",
+      ease:"power1.inOut",
       delay: 0.5,
     }).fromTo('.Hero-Header p', {
       translateX: '-200px',
@@ -48,7 +48,7 @@ const Home = () => {
       translateX: '0',
       opacity: 1,
       duration: 1,
-      ease: 'back.out',
+      ease:'power1.inOut',
       delay: 0.5,
     }).fromTo('.section-card', {
       opacity: 0,
