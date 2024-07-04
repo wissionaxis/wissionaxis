@@ -14,11 +14,11 @@ const events = [
 
 const OurEvents = () => {
   return (
-    <section className="py-16">
+    <section className="py-16 px-10">
       <h2 className="text-center text-4xl font-bold mb-8">Our Events</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
         {events.map(event => (
-          <div key={event.id} className="bg-white rounded-md p-4 shadow-lg">
+          <div key={event.id} className="bg-white rounded-md p-4 h-[15rem] flex-colm shadow-lg">
             <Image src={event.image} alt={event.title} className="w-full h-32 object-cover rounded-t-md" />
             <h4 className="text-lg font-bold mt-4">{event.title}</h4>
           </div>

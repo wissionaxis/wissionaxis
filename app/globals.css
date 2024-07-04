@@ -119,3 +119,14 @@ body{
   }
 
 }
+.bottom-liner{
+  padding: 14px;
+  border-bottom: 2px solid #3560B3;
+}
+
+.fonter{
+  font-size: clamp(25px,4vw,60px);
+}
+.fonterh{
+  font-size: clamp(25px,4vw,35px);
+}
