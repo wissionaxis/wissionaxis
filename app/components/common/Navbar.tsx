@@ -1,13 +1,15 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '@/app/assets/images/logo-nav.png';
 import { LinksType } from '@/app/constants/type';
 import gsap from 'gsap';
+import { Power1 } from 'gsap';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -26,11 +28,30 @@ const Navbar = () => {
         height: '0',
         ease: 'Power4.easeInOut',
         duration: 1,
-        // padding:0,
-        border:'none'
+        border: 'none'
       });
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (section) {
+      gsap.fromTo(
+        section,
+        {
+          opacity: 0,
+          y: 400,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 2,
+          // delay: 0.3,
+          ease:Power1.easeInOut,
+        }
+      );
+    }
+  }, []);
 
   const Links: LinksType[] = [
     { name: 'Home', linked: '/' },
@@ -41,18 +62,18 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="flex items-center z-[999] justify-center h-[16vh] w-full p-3 relative bg-white  ">
-      <nav className="bg-[#3560B3] w-[95vw]  p-6 flex justify-between items-center rounded-full shadow-md">
-        {/* log0 */}
+    <header className="flex items-center overflow-hidden z-[999] justify-center h-[16vh] w-full p-3 relative bg-white">
+      <nav className="bg-[#3560B3] w-[95vw] p-6 flex justify-between items-center rounded-full shadow-md" ref={sectionRef}>
+        {/* logo */}
         <div className="flex items-center text-white text-2xl font-bold">
           <Link href="/" className="flex items-center h-[1.2rem] ml-3">
             <Image src={Logo} alt="Logo" width={40} height={40} className="h-auto w-auto" />
           </Link>
         </div>
-        {/* log0 */}
+        {/* logo */}
         <div className="hidden md:flex space-x-12 text-white">
           {Links.map((t: LinksType, index: number) => (
-            <Link href={t.linked} key={index} className="hover:text-gray-300 transition-colors text-sm font-light ">
+            <Link href={t.linked} key={index} className="hover:text-gray-300 transition-colors text-sm font-light">
               {t.name}
             </Link>
           ))}
@@ -69,14 +90,14 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className={`navHeight absolute top-24 left-10 right-0  flex-colm rounded-[20px] border-none  w-[85%] z-[99999] bg-[#3560B3] overflow-hidden `}>
+        <div className={`navHeight absolute top-24 left-10 right-0 flex-colm rounded-[20px] border-none w-[85%] z-[99999] bg-[#3560B3] overflow-hidden ${!isOpen ? 'hidden' : ''}`}>
           {isOpen && Links.map((t: LinksType, index: number) => (
-            <Link href={t.linked} key={index} className={`text-white  hover:text-gray-300 transition-colors p-2 w-full text-center ${index ===0 && 'mt-3'}`}>
+            <Link href={t.linked} key={index} className={`text-white hover:text-gray-300 transition-colors p-2 w-full text-center ${index === 0 && 'mt-3'}`}>
               {t.name}
             </Link>
           ))}
           {isOpen && (
-            <Link href="/" className="block mb-3 bg-white text-blue-600 py-2 px-4  rounded-full hover:bg-gray-100 transition-colors mt-2">
+            <Link href="/" className="block mb-3 bg-white text-blue-600 py-2 px-4 rounded-full hover:bg-gray-100 transition-colors mt-2">
               Register
             </Link>
           )}

@@ -2,8 +2,8 @@
 import Image from 'next/image';
 import { SectionType } from '../constants/type';
 import { useEffect } from 'react';
-import gsap from 'gsap';
-import { Power4 ,Power3} from 'gsap';
+import gsap, { Power2 } from 'gsap';
+import { Power4 ,Power1} from 'gsap';
 import WhoWeAre from '../components/landing_components/Whoweare';
 import NetworkBuildScale from '../components/landing_components/Network';
 import OurEvents from '../components/landing_components/Events';
@@ -43,7 +43,7 @@ const Home = () => {
       translateX: '0',
       opacity: 1,
       duration: 1,
-      ease:"power1.inOut",
+      ease:Power2.easeInOut,
       delay: 0.5,
     }).fromTo('.Hero-Header p', {
       translateX: '-200px',
@@ -53,7 +53,7 @@ const Home = () => {
       opacity: 1,
       duration: 1,
       ease:'power1.inOut',
-      delay: 0.5,
+      delay: 0.3,
     }).fromTo('.section-card', {
       opacity: 0,
       y: 50,
@@ -62,8 +62,8 @@ const Home = () => {
       y: 0,
       duration: 1,
       stagger: 0.3,
-      ease: 'back.in',
-      delay: 0.3,
+      ease: Power1.easeInOut,
+      // delay: 0.3,
     }) .fromTo('.action-button', {
       opacity: 0,
       y: 50,
