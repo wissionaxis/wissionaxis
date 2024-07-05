@@ -1,6 +1,6 @@
 'use client'
 import { FC, useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import gsap,{Power1} from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const KeyFeatures: FC = () => {
@@ -18,44 +18,26 @@ const KeyFeatures: FC = () => {
         { height: '0%' },
         {
           height: '100%',
-          duration: 10,
-          ease: 'power4.in',
+          ease: Power1.easeInOut,
+          duration:40,
+          delay:0.2,
           scrollTrigger: {
-            trigger: featuresRef.current,
-            start: 'top 15%',
-            end: 'bottom bottom',
+            trigger: lineRef.current,
+            start: 'top 20%',
+            // end: 'bottom bottom',
             scrub: true,
-            onUpdate: (self) => {
-              const progress = self.progress;
-              const lineHeight = lineRef.current!.offsetHeight;
-              const viewportHeight = window.innerHeight;
-              const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
-              
-              const lineCurrentTop = scrollTop + viewportHeight * 0.15 + lineHeight * progress;
-              
-              features.forEach((feature, index) => {
-                const featureTop = feature.offsetTop;
-                const featureHeight = feature.clientHeight;
-                const featureBottom = featureTop + featureHeight;
-
-                if (lineCurrentTop >= featureTop && lineCurrentTop <= featureBottom) {
-                  gsap.to(feature, { scale: 1.2, duration: 0.3, ease: 'none' });
-                } else {
-                  gsap.to(feature, { scale: 1, duration: 0.3, ease: 'none' });
-                }
-              });
-            },
-          },
-        }
-      );
+          }
+        })
+      }
     }
-  }, []);
+        
+  , []);
 
   return (
     <div className="flex flex-col items-center justify-center py-8 px-4 md:px-8 lg:px-16">
       <h1 className="text-4xl font-bold text-gray-800 mb-8">Key Features</h1>
-      <div className="w-full max-w-5xl bg-white shadow-md rounded-lg p-8 flex relative">
-        <div ref={lineRef} className="absolute left-0 top-0 w-1 bg-blue-600"></div>
+      <div className="w-full max-w-5xl bg-white  rounded-lg p-8 flex relative">
+        <div ref={lineRef} className="absolute left-3 top-0 w-1 bg-blue-600"></div>
         <div ref={featuresRef} className="pl-6 space-y-8">
           <Feature 
             title="Educational Content and Resources"

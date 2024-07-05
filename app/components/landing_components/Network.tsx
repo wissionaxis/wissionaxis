@@ -20,7 +20,7 @@ const NetworkBuildScale = () => {
     const t1 = gsap.timeline({
       scrollTrigger: {
         trigger: section,
-        start: 'top 70%',
+        start: 'top 60%',
         toggleActions: 'play none none none',
       },
     });
