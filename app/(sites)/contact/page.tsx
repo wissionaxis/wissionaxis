@@ -1,37 +1,98 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 const ContactUs = () => {
+  const leftSideRef = useRef(null);
+  const rightSideRef = useRef(null);
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    const t1 = gsap.timeline();
+    t1.to(leftSideRef.current, {
+      opacity: 1,
+      translateY: 0,
+      duration: 0.5,
+    })
+    .to(buttonRef.current, {
+      opacity: 1,
+      translateY: 0,
+      duration: 0.5,
+    })
+      .to(rightSideRef.current, {
+        opacity: 1,
+        translateY: 0,
+        duration: 0.5,
+      })
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col md:flex-row justify-center items-center md:items-start py-12 px-4 sm:px-6 lg:px-8">
       {/* Left Side: Contact Form */}
-      <div className="w-full md:w-1/2 bg-white p-8 border rounded-lg shadow-lg mx-4 my-4">
+      <div
+        ref={leftSideRef}
+        className="w-full md:w-1/2 bg-white p-8 border rounded-lg shadow-lg mx-4 my-4"
+        style={{ opacity: 0, transform: 'translateY(50px)' }}
+      >
         <h2 className="text-4xl font-bold mb-6 text-gray-800">
           Get In <span className="text-blue-500">Touch</span> With Us
         </h2>
-        <form className="space-y-6">
+        <form className="space-y-6" method='post'>
           <div>
-            <label className="block text-lg mb-2 text-gray-700" htmlFor="name">Name</label>
-            <input className="w-full border-b-2 border-blue-500 focus:outline-none focus:border-blue-700 p-2" type="text" id="name" name="name" />
+            <label className="block text-lg mb-2 text-gray-700" htmlFor="name">
+              Name
+            </label>
+            <input
+              className="w-full border-b-2 border-blue-500 focus:outline-none focus:border-blue-700 p-2"
+              type="text"
+              id="name"
+              name="name"
+            />
           </div>
           <div>
-            <label className="block text-lg mb-2 text-gray-700" htmlFor="email">E-Mail</label>
-            <input className="w-full border-b-2 border-blue-500 focus:outline-none focus:border-blue-700 p-2" type="email" id="email" name="email" />
+            <label className="block text-lg mb-2 text-gray-700" htmlFor="email">
+              E-Mail
+            </label>
+            <input
+              className="w-full border-b-2 border-blue-500 focus:outline-none focus:border-blue-700 p-2"
+              type="email"
+              id="email"
+              name="email"
+            />
           </div>
           <div>
-            <label className="block text-lg mb-2 text-gray-700" htmlFor="message">Message</label>
-            <textarea className="w-full border-b-2 border-blue-500 focus:outline-none focus:border-blue-700 p-2" id="message" name="message" ></textarea>
+            <label className="block text-lg mb-2 text-gray-700" htmlFor="message">
+              Message
+            </label>
+            <textarea
+              className="w-full border-b-2 border-blue-500 focus:outline-none focus:border-blue-700 p-2"
+              id="message"
+              name="message"
+            ></textarea>
           </div>
           <div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-6 rounded-lg w-full text-lg">Submit</button>
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-6 rounded-lg w-full text-lg"
+              ref={buttonRef}
+              style={{ opacity: 0, transform: 'translateY(50px)' }}
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>
 
       {/* Right Side: Contact Details */}
-      <div className="w-full md:w-1/2 bg-white p-8 border rounded-lg shadow-lg mx-4 my-4">
+      <div
+        ref={rightSideRef}
+        className="w-full md:w-1/2 bg-white p-8 border rounded-lg shadow-lg mx-4 my-4"
+        style={{ opacity: 0, transform: 'translateY(50px)' }}
+      >
         <div className="mb-6">
           <h3 className="text-2xl font-bold text-gray-800 mb-2">Contact Details</h3>
-          <p className="text-lg text-gray-700 mb-4">Feel free to get in touch with us through the following details or follow us on social media.</p>
+          <p className="text-lg text-gray-700 mb-4">
+            Feel free to get in touch with us through the following details or follow us on social media.
+          </p>
         </div>
         <div className="mb-6">
           <h3 className="text-xl font-bold text-gray-800">Phone Number:</h3>
@@ -61,8 +122,6 @@ const ContactUs = () => {
         </div>
       </div>
     </div>
-    
-    
   );
 };
 
