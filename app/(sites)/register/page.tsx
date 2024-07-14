@@ -7,7 +7,7 @@ const LoginPage = () => {
     <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-md">
         <div className="p-8">
-          <h2 className="text-3xl font-bold mb-4 text-center">Welcome Back!</h2>
+          <h2 className="text-3xl font-bold mb-4 text-center">Welcome Back!!</h2>
           <p className="mb-4 text-center">Continue with Google or enter your details.</p>
           <button className="bg-blue-500 text-white py-3 px-6 rounded-lg flex items-center justify-center w-full mb-4">
             <svg className="w-6 h-6 mr-2" viewBox="0 0 48 48">
