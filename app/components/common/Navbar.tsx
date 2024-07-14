@@ -79,7 +79,7 @@ const Navbar = () => {
           ))}
         </div>
         <div className="hidden md:block">
-          <Link href="/" className="bg-white text-sm text-blue-600 py-2 px-4 rounded-full hover:bg-gray-100 transition-colors">
+          <Link href="/register" className="bg-white text-sm text-blue-600 py-2 px-4 rounded-full hover:bg-gray-100 transition-colors">
             Register
           </Link>
         </div>
