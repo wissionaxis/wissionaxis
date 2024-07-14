@@ -97,7 +97,7 @@ const Navbar = () => {
             </Link>
           ))}
           {isOpen && (
-            <Link href="/" className="block mb-3 bg-white text-blue-600 py-2 px-4 rounded-full hover:bg-gray-100 transition-colors mt-2">
+            <Link href="/register" className="block mb-3 bg-white text-blue-600 py-2 px-4 rounded-full hover:bg-gray-100 transition-colors mt-2">
               Register
             </Link>
           )}

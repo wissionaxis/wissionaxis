@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const LoginPage = () => {
@@ -31,13 +32,13 @@ const LoginPage = () => {
             <div className="mb-4">
               <label className="block text-gray-700">Password</label>
               <input type="password" placeholder="******" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
-              <a href="#" className="text-blue-500 text-sm float-right">Forgot password?</a>
+              <Link href="#" className="text-blue-500 text-sm float-right my-3">Forgot password?</Link>
             </div>
             <button className="w-full bg-blue-500 text-white py-3 px-6 rounded-lg">Login</button>
           </form>
           <div className="text-center">
-            <p className="mb-4">
-              Don't have an account? <a href="#" className="text-blue-500">Sign Up for free</a>
+            <p className="mb-4 ">
+              Dont have an account? <a href="#" className="text-blue-500">Sign Up for free</a>
             </p>
             <p>
               <a href="#" className="text-gray-500">Skip for now →</a>
