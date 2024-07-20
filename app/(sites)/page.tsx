@@ -95,10 +95,10 @@ const Home = () => {
       <div className="w-[95%] min-h-[70vh] flex flex-col md:flex-row">
         <div className="container mx-auto px-4 md:px-8 lg:px-16 md:w-2/3">
           <div className="mb-16 -mt-5 Hero-Header">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-[500] mb-5 overflow-hidden">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl py-3 font-[500] mb-5 overflow-hidden ">
               Empowering India{"'"}s <span className="textColor">Innovators</span>
             </h1>
-            <p className="text-gray-600 text-lg md:text-xl overflow-hidden">Your Gateway to a Thriving Entrepreneurial Ecosystem</p>
+            <p className="text-gray-600 text-lg md:text-xl overflow-hidden ">Your Gateway to a Thriving Entrepreneurial Ecosystem</p>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-start mb-16">
             {sections.map((section: SectionType, index: number) => (
@@ -106,10 +106,10 @@ const Home = () => {
                 key={index}
                 className="section-card flex-1 h-full mb-8 md:mb-0 relative"
               >
-                <h2 className="text-5xl text-gray-200 mb-2 absolute left-0 top-0">
+                <h2 className="text-7xl text-gray-200 mb-2 absolute left-0 top-0">
                   {section.id}
                 </h2>
-                <div className="relative w-full h-full mt-7 md:ml-7">
+                <div className="relative w-full h-full mt-9 md:ml-7">
                   <h3 className="text-xl font-semibold mb-2">{section.title}</h3>
                   <p className="text-gray-600">{section.description}</p>
                 </div>

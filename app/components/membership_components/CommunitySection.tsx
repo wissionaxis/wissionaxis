@@ -122,7 +122,7 @@ const CommunitySection: React.FC = () => {
 
   return (
     <section ref={sectionRef} className="flex flex-col items-center py-16 px-6  md:px-12 lg:px-24 text-center">
-      <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-2 w-[80%] flex-all gap-8 mb-16">
+      <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-2 w-[80%] max-lg:w-full  flex-all gap-8 mb-16">
         <div className="flex flex-col items-center border-2 w-[40%] border-blue-600 rounded-lg p-6">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">800+</h2>
           <p className="text-lg md:text-xl lg:text-2xl mb-4">Community members</p>
@@ -140,11 +140,11 @@ const CommunitySection: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center w-full max-w-full">
-        <div className="w-full md:w-1/2 mb-8 md:mb-0 md:mr-8">
+      <div className="flex flex-col lg:flex-row items-center w-full max-w-full">
+        <div className="w-full lg:w-1/2 mb-8 md:mb-0 md:mr-8">
           <img ref={imageRef} src="https://via.placeholder.com/800x600" alt="WhatsApp Chat" className="rounded-lg" />
         </div>
-        <div className="w-full md:w-1/2 text-left">
+        <div className="w-full lg:w-1/2 text-left lg:mt-0 mt-10">
           <h2 ref={titleRef} className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
             Join our <span className="text-green-500">WhatsApp</span> Community
           </h2>

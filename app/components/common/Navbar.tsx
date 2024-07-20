@@ -73,8 +73,8 @@ const Navbar = () => {
         {/* logo */}
         <div className="hidden md:flex space-x-12 text-white">
           {Links.map((t: LinksType, index: number) => (
-            <Link href={t.linked} key={index} className="hover:text-gray-300 transition-colors text-sm font-light">
-              {t.name}
+            <Link href={t.linked} key={index} className="hover:text-gray-300 transition-colors text-[0.99rem] font-light">
+              {t.name} 
             </Link>
           ))}
         </div>
@@ -92,7 +92,7 @@ const Navbar = () => {
         </div>
         <div className={`navHeight absolute top-24 left-10 right-0 flex-colm rounded-[20px] border-none w-[85%] z-[99999] bg-[#3560B3] overflow-hidden ${!isOpen ? 'hidden' : ''}`}>
           {isOpen && Links.map((t: LinksType, index: number) => (
-            <Link href={t.linked} key={index} className={`text-white hover:text-gray-300 transition-colors p-2 w-full text-center ${index === 0 && 'mt-3'}`}>
+            <Link href={t.linked} key={index} className={`text-white hover:text-gray-300 transition-colors p-2 w-full text-center text- ${index === 0 && 'mt-3'}`}>
               {t.name}
             </Link>
           ))}
