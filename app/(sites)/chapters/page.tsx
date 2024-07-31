@@ -40,7 +40,7 @@ const Page = () => {
           className="flex flex-col items-center text-center"
           ref={(el:any) => (sectionRefs.current[0] = el)}
         >
-          <div className="box flex flex-col justify-center items-center rounded-3xl h-[60vh] w-[80vw] bg-white text-black p-4 border border-[#3560B3] border-3">
+          <div className="box flex flex-col justify-center items-center rounded-3xl h-[35vh] md:h-[60vh] w-[80vw] bg-white text-black p-4 border border-[#3560B3] border-3">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 md:mb-8 leading-snug">
               “ Every <span className="text-[#3560B3]">Great story</span> begins with an <br />
               Iconic first <span className="text-[#3560B3]">chapter ”</span>
@@ -53,7 +53,7 @@ const Page = () => {
           </div>
         </section>
         <section className="mt-16" ref={(el:any) => (sectionRefs.current[1] = el)}>
-          <h2 className="text-center text-6xl font-bold mb-8">OUR CHAPTERS</h2>
+          <h2 className="text-center md:text-6xl text-3xl font-bold mb-8">OUR CHAPTERS</h2>
           <div className="mb-16">
             <h3 className="text-4xl mt-12 mb-6 font-semibold">Hyderabad</h3>
             <p className="text-gray-700 mt-12 mb-12">
@@ -88,11 +88,11 @@ const Page = () => {
           </div>
         </section>
         <section className="mb-16" ref={(el:any) => (sectionRefs.current[2] = el)}>
-          <h2 className="text-6xl font-bold text-left mb-16">
+          <h2 className="md:text-6xl text-3xl font-bold text-left mb-16">
             Create a New <span className="text-[#3560B3]">WissionAxis</span> Chapter
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="text-gray-700 w-[40vw] mb-4 md:mb-0">
+            <p className="text-gray-700 w-[40vw] mb-10 max-md:-mt-10 md:mb-0  max-md:w-full">
               Have you ever felt a burning desire to empower others, foster collaboration, and drive positive change in your community?
               WissionAxis might be the perfect platform to ignite that passion! Were on a mission to cultivate a global network of enthusiastic leaders
               who are dedicated to building a brighter future. Were thrilled to expand our vibrant community and welcome passionate individuals like you
@@ -101,7 +101,7 @@ const Page = () => {
             </p>
             <Image src={event2} className="w-full md:w-1/2 bg-gray-200 h-[20rem] rounded-md mb-4 mt-09 md:mb-0" alt='' />
           </div>
-          <button className="w-9 md:w-1/4 bg-[#3560B3] text-white h-12 rounded-md">start your chapter</button>
+          <button className=" md:w-1/4 w-1/3 bg-[#3560B3] max-lg:mt-10 text-white h-12 rounded-md">start your chapter</button>
         </section>
       </main>
     </div>

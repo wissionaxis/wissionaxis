@@ -31,7 +31,7 @@ const ContactUs = () => {
       {/* Left Side: Contact Form */}
       <div
         ref={leftSideRef}
-        className="w-full md:w-1/2 bg-white p-8 border rounded-lg shadow-lg mx-4 my-4"
+        className="w-full md:w-1/3 bg-white p-8 border rounded-lg shadow-lg mx-4 my-4"
         style={{ opacity: 0, transform: 'translateY(50px)' }}
       >
         <h2 className="text-4xl font-bold mb-6 text-gray-800">
@@ -85,7 +85,7 @@ const ContactUs = () => {
       {/* Right Side: Contact Details */}
       <div
         ref={rightSideRef}
-        className="w-full md:w-1/2 bg-white p-8 border rounded-lg shadow-lg mx-4 my-4"
+        className="w-full md:w-1/3 md:ml-40 bg-white p-8 border rounded-lg shadow-lg mx-4 my-4"
         style={{ opacity: 0, transform: 'translateY(50px)' }}
       >
         <div className="mb-6">

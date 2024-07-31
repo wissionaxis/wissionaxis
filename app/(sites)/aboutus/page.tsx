@@ -20,10 +20,10 @@ const App = () => {
       <main className="p-8">
 
         <section className="text-center mb-16">
-          <h2 className="text-6xl font-bold pr-30 mb-4">
+          <h2 className="md:text-6xl text-3xl font-bold pr-30 mb-4">
             Building a Thriving <span className="text-blue-500">Entrepreneurial</span> Ecosystem 
           </h2>
-          <h2 className="text-6xl font-bold pr-30 mb-16">
+          <h2 className="md:text-6xl  text-3xl font-bold pr-30 mb-16">
            for Future India
           </h2>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLP26ArHUgg2zL4YP2IfHn9HG3B6bOHyNkmg&s" alt="Entrepreneurial Ecosystem" className="w-full rounded-lg h-96 mt-10 mx-auto" />
@@ -44,7 +44,7 @@ const App = () => {
         </section>
         <section className="mb-12">
           <h3 className="text-5xl font-bold mb-10 text-blue-600">Our Values</h3>
-          <div className="md:flex mr-20">
+          <div className="md:flex md:mr-20">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLP26ArHUgg2zL4YP2IfHn9HG3B6bOHyNkmg&s" alt="Our Values" className="md:w-1/2 mb-4 md:mb-0 md:pr-4" />
             <p className="md:w-1/2">
              

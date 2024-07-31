@@ -43,10 +43,10 @@ const WelcomeSection: React.FC = () => {
   return (
     <section ref={sectionRef} className="flex flex-col items-start py-16 px-6 md:px-12 lg:px-24 text-left">
       <div className="max-w-full">
-        <h1 ref={titleRef} className="text-4xl  h-[7rem] lg:leading-[6rem] max-md:text-2xl  lg:text-4xl font-medium text-center mb-4">
+        <h1 ref={titleRef} className="text-4xl  h-[7rem] lg:leading-[3rem] max-md:text-2xl  lg:text-4xl font-medium text-center mb-4">
           <span className="mb-4">Welcome to Our Dynamic Community</span> <br/><span>and Ignite Your Potential</span>
         </h1>
-        <p ref={paragraphRef} className="text-lg md:text-xl lg:text-xl mb-8 w-[100%] text-center">
+        <p ref={paragraphRef} className="text-lg md:text-xl lg:text-xl mb-8 max-md:w-[100%] w-2/3 mx-auto text-center">
           Wissionaxis fosters a vibrant and engaging community through a variety of activities designed to empower entrepreneurs and foster collaboration.
         </p>
         <div className="w-full  flex-center">

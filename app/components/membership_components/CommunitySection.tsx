@@ -122,8 +122,8 @@ const CommunitySection: React.FC = () => {
 
   return (
     <section ref={sectionRef} className="flex flex-col items-center py-16 px-6  md:px-12 lg:px-24 text-center">
-      <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-2 w-[80%] max-lg:w-full  flex-all gap-8 mb-16">
-        <div className="flex flex-col items-center border-2 w-[40%] border-blue-600 rounded-lg p-6">
+      <div ref={statsRef} className="w-[80%] max-lg:w-full  md:flex-all max-md:flex-colm gap-8 mb-16">
+        <div className="flex flex-col items-center border-2 md:w-[40%] w-[95%] border-blue-600 rounded-lg p-6">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">800+</h2>
           <p className="text-lg md:text-xl lg:text-2xl mb-4">Community members</p>
           <div className="flex items-center">
@@ -131,7 +131,7 @@ const CommunitySection: React.FC = () => {
             <span className="ml-2">Members</span>
           </div>
         </div>
-        <div className="flex flex-col items-center w-[40%] bg-blue-600 text-white rounded-lg p-6">
+        <div className="flex flex-col items-center md:w-[40%] w-[95%] bg-blue-600 text-white rounded-lg p-6">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">5★</h2>
           <p className="text-lg md:text-xl lg:text-2xl mb-4">Reviews</p>
           <div className="flex items-center">

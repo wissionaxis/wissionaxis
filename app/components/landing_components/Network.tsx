@@ -42,8 +42,8 @@ const NetworkBuildScale = () => {
       }, {
         opacity: 1,
         y: 0,
-        duration: 1,
-        delay: 0.3,
+        duration: 0.8,
+        // delay: 0.3,
       })
       .fromTo(learn, {
         opacity: 0,
@@ -51,8 +51,8 @@ const NetworkBuildScale = () => {
       }, {
         opacity: 1,
         y: 0,
-        duration: 1,
-        delay: 0.3,
+        duration: 0.8,
+        // delay: 0.3,
       })
       .fromTo(build, {
         opacity: 0,
@@ -60,8 +60,8 @@ const NetworkBuildScale = () => {
       }, {
         opacity: 1,
         y: 0,
-        duration: 1,
-        delay: 0.3,
+        duration: 0.8,
+        // delay: 0.3,
       });
     } else {
       console.error("One or more elements are not found in the DOM.");
