@@ -1,24 +1,78 @@
+"use client";
 import React from 'react';
+import {useState} from 'react';
+
 // import { signInWithGoogle } from '../lib/firebase';
 
 const RegisterPage: React.FC = () => {
+  const [formData , setformData] = useState({
+        email : '',
+        password : '',
+        confirmpassword : ''
+      });
+  const [errors , setErrors] = useState<{[key : string] : string}>({});
+  const change = (event : React.ChangeEvent<HTMLInputElement>) => {
+    const {name , value} = event.target;
+    setformData({
+      ...formData,
+      [event.target.name] : event.target.value
+    });
+  }
+  const validation = () => {
+    const inputErrors: { [key: string]: string } = {};
+    if(!formData.email){
+      inputErrors.email = 'EmailId required!'
+    }
+    else if(!/\S+@\S+.\S/.test(formData.email)){
+      inputErrors.email = 'Invalid EmailId';
+    }
+    if(!formData.password){
+      inputErrors.password = 'Password is required'
+    }
+    if(!formData.confirmpassword)
+    {
+      inputErrors.confirmpassword = 'Enter your Password for Confirmation!'
+    }
+    else if(formData.password != formData.confirmpassword)
+    {
+      inputErrors.confirmpassword = 'Re-Enter your Password for Confirmation'
+    }
+    setErrors(inputErrors);
+    return Object.keys(inputErrors).length === 0;
+  }
+  const onSubmitOfForm = (event : React.FormEvent) => 
+  {
+    event.preventDefault();
+    if(!validation())
+    {
+      console.log("Faulty Inputs"); //Put this up for my own reference , dont mind!
+    }
+    else
+    {
+      console.log("Perfect Inputs Shared!");
+      //Here goes the code to send all the entered data to the server 
+    }
+  }
   return (
     <div className="min-h-screen flex">
       <div className="w-1/2 flex flex-col justify-center items-center bg-white p-8">
         <div className="max-w-md w-full">
           <h1 className="text-3xl font-bold mb-4">Register</h1>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={onSubmitOfForm}>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email address</label>
-              <input type="email" id="email" name="email" className="mt-1 p-2 block w-full border border-gray-300 rounded-md" required />
+              <input type="email" id="email" name="email" value = {formData.email} onChange = {change} className="mt-1 p-2 block w-full border border-gray-300 rounded-md" required />
+              {errors.email ? <p className="text-red-500 text-sm">{errors.email}</p> : null} 
             </div>
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
-              <input type="password" id="password" name="password" className="mt-1 p-2 block w-full border border-gray-300 rounded-md" required />
+              <input type="password" id="password" name="password" value = {formData.password} onChange = {change} className="mt-1 p-2 block w-full border border-gray-300 rounded-md" required />
+              {errors.password ? <p className="text-red-500 text-sm">{errors.password}</p> : null}
             </div>
             <div>
-              <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-700">Confirm Password</label>
-              <input type="password" id="confirm-password" name="confirm-password" className="mt-1 p-2 block w-full border border-gray-300 rounded-md" required />
+              <label htmlFor="confirmpassword" className="block text-sm font-medium text-gray-700">Confirm Password</label>
+              <input type="password" id="confirmpassword" name="confirmpassword" value = {formData.confirmpassword} onChange={change} className="mt-1 p-2 block w-full border border-gray-300 rounded-md" required />
+              {errors.confirmpassword ? <p className = "text-red-500 text-sm">{errors.confirmpassword}</p> :null}
             </div>
             <p className="mt-4 text-center text-sm text-gray-600">
             Already have an account? <a href="/login" className="text-blue-600 hover:underline">Log in</a>
