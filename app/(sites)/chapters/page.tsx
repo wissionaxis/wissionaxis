@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import event1 from '@/app/assets/images/event1.jpg';
 import event2 from '@/app/assets/images/event1.jpg';
+import Button from '@/app/components/common/Button';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,6 +67,7 @@ const Page = () => {
                   <Image src={event1} alt="Workshop" className="w-full h-32 object-cover rounded-t-md" />
                   <h4 className="text-lg font-bold mt-4">Workshop on Example 101</h4>
                   <p className="text-gray-500">5 min read</p>
+                  <Button name={"Explore"} />
                 </div>
               ))}
             </div>
@@ -82,6 +84,7 @@ const Page = () => {
                   <Image src={event2} alt="Workshop" className="w-full h-32 object-cover rounded-t-md" />
                   <h4 className="text-lg font-bold mt-4">Workshop on Example 101</h4>
                   <p className="text-gray-500">5 min read</p>
+                  <Button name={"Explore"} />
                 </div>
               ))}
             </div>

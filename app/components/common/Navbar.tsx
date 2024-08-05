@@ -82,6 +82,9 @@ const Navbar = () => {
           <Link href="/register" className="bg-white text-sm text-blue-600 py-2 px-4 rounded-full hover:bg-gray-100 transition-colors">
             Register
           </Link>
+          <Link href="/Login" className="ml-10 bg-white text-sm text-blue-600 py-2 px-4 rounded-full hover:bg-gray-100 transition-colors">
+            Login
+          </Link>
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-white focus:outline-none mt-1 mr-1">
