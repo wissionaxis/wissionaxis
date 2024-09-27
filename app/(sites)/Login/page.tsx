@@ -17,21 +17,15 @@ const LoginPage = () => {
               <path fill="#EA4335" d="M9.9 28.2c-1.1-3-1.1-6.3 0-9.3l-7.3-5.6C.3 17.6 0 20.8 0 24s.3 6.4 1.6 9.5l7.3-5.6z" />
             </svg>
             Login with Google
-          </button>
-          <button className="bg-blue-700 text-white py-3 px-6 rounded-lg flex items-center justify-center w-full mb-4">
-            <svg className="w-6 h-6 mr-2" viewBox="0 0 48 48">
-              {/* SVG path for Facebook */}
-            </svg>
-            Login with Facebook
-          </button>
+            </button>
           <form className="mb-4">
             <div className="mb-4">
-              <label className="block text-gray-700 mb-2">Email</label>
-              <input type="email" placeholder="example@gmail.com" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              <label className="block text-gray-700 mb-2" htmlFor='email'>Email</label>
+              <input type="email" placeholder="example@gmail.com" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id = "email" name = "email" />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 mb-2">Password</label>
-              <input type="password" placeholder="******" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              <label className="block text-gray-700 mb-2" htmlFor='password'>Password</label>
+              <input type="password" placeholder="******" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id = "password" name = "password" />
               <Link href="#" className="text-blue-500 text-sm float-right my-3">Forgot password?</Link>
             </div>
             <button className="w-full bg-blue-500 text-white py-3 px-6 rounded-lg">Login</button>

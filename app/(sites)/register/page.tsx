@@ -1,6 +1,8 @@
 "use client";
+import axios from 'axios';
 import React from 'react';
 import {useState} from 'react';
+
 
 // import { signInWithGoogle } from '../lib/firebase';
 
@@ -40,17 +42,22 @@ const RegisterPage: React.FC = () => {
     setErrors(inputErrors);
     return Object.keys(inputErrors).length === 0;
   }
-  const onSubmitOfForm = (event : React.FormEvent) => 
+  const onSubmitOfForm = async (event : React.FormEvent) => 
   {
     event.preventDefault();
     if(!validation())
     {
-      console.log("Faulty Inputs"); //Put this up for my own reference , dont mind!
+      console.log("Faulty Inputs"); 
     }
     else
     {
-      console.log("Perfect Inputs Shared!");
-      //Here goes the code to send all the entered data to the server 
+      try{
+      const response = await axios.post("/api/register",formData);
+      console.log(response?.data);
+      }
+      catch(e){
+      console.log(e);
+      }
     }
   }
   return (
@@ -58,7 +65,7 @@ const RegisterPage: React.FC = () => {
       <div className="w-1/2 flex flex-col justify-center items-center bg-white p-8">
         <div className="max-w-md w-full">
           <h1 className="text-3xl font-bold mb-4">Register</h1>
-          <form className="space-y-4" onSubmit={onSubmitOfForm}>
+          <form className="space-y-4" onSubmit={onSubmitOfForm} method='post'>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email address</label>
               <input type="email" id="email" name="email" value = {formData.email} onChange = {change} className="mt-1 p-2 block w-full border border-gray-300 rounded-md" required />

@@ -7,7 +7,7 @@ import { Power4 ,Power1} from 'gsap';
 import WhoWeAre from '../components/landing_components/Whoweare';
 import NetworkBuildScale from '../components/landing_components/Network';
 import OurEvents from '../components/landing_components/Events';
-import Newsletter from '../components/landing_components/Newsletter';
+import Newsletter from '../components/landing_components/Newsletter'; 
 const Home = () => {
   const images = [
     '/path/to/your/image1.png',
