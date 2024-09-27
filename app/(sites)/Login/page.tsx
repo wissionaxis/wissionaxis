@@ -1,7 +1,67 @@
+'use client'
+import axios from 'axios';
+import { signIn } from 'next-auth/react';
+import { redirect } from 'next/dist/server/api-utils';
 import Link from 'next/link';
 import React from 'react';
-
+import {useState} from 'react'
+import { FaBullseye } from 'react-icons/fa6';
+import {useRouter} from 'next/navigation';
+  
 const LoginPage = () => {
+  const router = useRouter()
+  const [formData , setformData] = useState({
+    email : '',
+    password : ''
+  });
+const [errors , setErrors] = useState<{[key : string] : string}>({});
+
+const change = (event : React.ChangeEvent<HTMLInputElement>) => {
+const {name , value} = event.target;
+setformData({
+  ...formData,
+  [event.target.name] : event.target.value
+});
+}
+
+const validation = () => {
+const inputErrors: { [key: string]: string } = {};
+if(!formData.email){
+  inputErrors.email = 'EmailId required!'
+}
+else if(!/\S+@\S+.\S/.test(formData.email)){
+  inputErrors.email = 'Invalid EmailId';
+}
+if(!formData.password){
+  inputErrors.password = 'Password is required'
+}
+setErrors(inputErrors);
+return Object.keys(inputErrors).length === 0;
+}
+
+const onSubmitOfForm = async (event : React.FormEvent) => 
+{
+event.preventDefault();
+if(!validation())
+{
+  console.log("Faulty Inputs"); 
+}
+else
+{
+  event.preventDefault();
+  try{
+  const response = await signIn("credentials",{...formData,redirect: false});
+  console.log(response?.status);
+  if(response?.status == 200)
+  {
+    router.push('/');
+  }
+  }
+  catch(e){
+  console.log(e);
+  }
+}
+}
   return (
     <>
     <div className="min-h-screen flex items-center justify-center bg-white">
@@ -18,17 +78,19 @@ const LoginPage = () => {
             </svg>
             Login with Google
             </button>
-          <form className="mb-4">
+          <form className="mb-4" method = "post" onSubmit={onSubmitOfForm}>
             <div className="mb-4">
               <label className="block text-gray-700 mb-2" htmlFor='email'>Email</label>
-              <input type="email" placeholder="example@gmail.com" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id = "email" name = "email" />
+              <input type="email" placeholder="example@gmail.com" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id = "email" name = "email" value = {formData.email} onChange = {change} required/>
+              {errors.email ? <p className="text-red-500 text-sm">{errors.email}</p> : null}
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 mb-2" htmlFor='password'>Password</label>
-              <input type="password" placeholder="******" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id = "password" name = "password" />
+              <input type="password" placeholder="******" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id = "password" name = "password" value = {formData.password} onChange = {change} required />
+              {errors.password ? <p className="text-red-500 text-sm">{errors.password}</p> : null}
               <Link href="#" className="text-blue-500 text-sm float-right my-3">Forgot password?</Link>
             </div>
-            <button className="w-full bg-blue-500 text-white py-3 px-6 rounded-lg">Login</button>
+            <button className="w-full bg-blue-500 text-white py-3 px-6 rounded-lg" type = "submit">Login</button>
           </form>
           <div className="text-center">
             <p className="mb-4 ">

@@ -7,12 +7,15 @@ import { LinksType } from '@/app/constants/type';
 import gsap from 'gsap';
 import { Power1 } from 'gsap';
 import { usePathname } from 'next/navigation'; // To get the current path
+import {useSession} from "next-auth/react";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname(); // This will give us the current active route
-
+  const {data} = useSession();
+  console.log(data?.user?.email);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -60,6 +63,7 @@ const Navbar = () => {
     { name: 'Chapters', linked: '/chapters' },
     { name: 'About Us', linked: '/aboutus' },
     { name: 'Contact', linked: '/contact' }
+ 
   ];
 
   return (
@@ -100,7 +104,7 @@ const Navbar = () => {
               pathname === '/login' ? 'text-blue-600' : 'text-gray-400'
             }`}
           >
-            Login
+            Login {data?.user?.email}
           </Link>
         </div>
         {/* Mobile Menu */}
@@ -125,12 +129,12 @@ const Navbar = () => {
           ))}
           {isOpen && (
             <Link
-              href="/register"
+              href="/register" 
               className={`block mb-3 bg-white text-blue-600 py-2 px-4 rounded-full hover:bg-gray-100 transition-colors mt-2 ${
                 pathname === '/register' ? 'text-blue-600' : 'text-gray-400'
               }`}
             >
-              Register
+              Register {data?.user?.email}
             </Link>
           )}
         </div>

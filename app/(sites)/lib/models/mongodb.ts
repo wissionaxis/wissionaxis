@@ -8,7 +8,7 @@ if (!MONGO_URI) {
 
 let cachedClient: mongoose.Mongoose | null = null;
 
-export async function connectToDatabase() {
+export async function connectToDatabase(url?: string) {
   if (cachedClient) {
     return { client: cachedClient };
   }
