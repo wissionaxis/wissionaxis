@@ -1,6 +1,9 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import Link from 'next/link';
+import { FaBehance, FaLinkedin, FaInstagram, FaYoutube, FaWhatsapp } from 'react-icons/fa'
+
 
 const ContactUs = () => {
   const leftSideRef = useRef(null);
@@ -106,19 +109,14 @@ const ContactUs = () => {
           <h3 className="text-xl font-bold text-gray-800">Address:</h3>
           <p className="text-blue-500 text-lg">Hyderabad, Telangana</p>
         </div>
-        <div>
+        <div className='flex'>
           <h3 className="text-xl font-bold text-gray-800">Socials:</h3>
-          <div className="flex space-x-6 mt-4">
-            <a href="#" className="text-blue-500 text-2xl">
-              <i className="fab fa-linkedin"></i>
-            </a>
-            <a href="#" className="text-blue-500 text-2xl">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#" className="text-blue-500 text-2xl">
-              <i className="fab fa-facebook"></i>
-            </a>
-          </div>
+          <div className="flex-all w-2/3 ">
+                <Link href="https://www.youtube.com/@fortunebox49" target="_blank"><FaWhatsapp className="text-2xl text-black" /></Link>
+                <Link href="https://www.youtube.com/@fortunebox49" target="_blank"><FaYoutube className="text-2xl text-black" /></Link>
+                <Link href="https://www.linkedin.com/company/fortunebox/" target="_blank"><FaLinkedin className="text-2xl text-black" /></Link>
+                <Link href="https://www.instagram.com/fortunebox.in" target="_blank"><FaInstagram className="text-2xl text-black" /></Link>
+              </div>
         </div>
       </div>
     </div>

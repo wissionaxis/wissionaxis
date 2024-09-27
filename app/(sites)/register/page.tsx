@@ -94,7 +94,7 @@ const RegisterPage: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/2  flex justify-center items-center">
+      <div className="w-1/2  flex justify-center items-center bg-[#3560B3]">
         <div className=" w-[50%] h-[50vh]">
         <img src="https://cdni.iconscout.com/illustration/premium/thumb/account-login-protection-8876027-7271014.png?f=webp" alt="Decorative" className="w-full h-full " />
         </div>

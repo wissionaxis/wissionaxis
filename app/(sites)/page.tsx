@@ -1,6 +1,10 @@
 'use client'
 import Image from 'next/image';
 import { SectionType } from '../constants/type';
+import tm from '../assets/images/e2.jpg';
+import sm from '../assets/images/e1.jpg';
+import km from '../assets/images/e4.jpg';
+
 import { useEffect } from 'react';
 import gsap, { Power2 } from 'gsap';
 import { Power4 ,Power1} from 'gsap';
@@ -10,9 +14,9 @@ import OurEvents from '../components/landing_components/Events';
 import Newsletter from '../components/landing_components/Newsletter'; 
 const Home = () => {
   const images = [
-    '/path/to/your/image1.png',
-    '/path/to/your/image2.png',
-    '/path/to/your/image3.png',
+       tm,
+       sm,
+       km,
   ];
 
   const sections: SectionType[] = [
@@ -126,7 +130,7 @@ const Home = () => {
           </div>
         </div>
         <div className="flex flex-col items-center md:w-1/3 mt-8 md:mt-0">
-          {images.map((src: string, index: number) => (
+          {images.map((src: any, index: number) => (
             <div
               key={index}
               className={`animated-image relative h-40 w-full md:w-1/2 mb-4 ${index % 2 === 0 ? 'self-start' : 'self-end'}`}
@@ -134,8 +138,6 @@ const Home = () => {
               <Image
                 src={src}
                 alt={`Image ${index + 1}`}
-                layout="fill"
-                objectFit="cover"
                 className="rounded-lg shadow-md"
               />
             </div>
