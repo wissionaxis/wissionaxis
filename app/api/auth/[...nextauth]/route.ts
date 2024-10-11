@@ -4,14 +4,26 @@ import { connectToDatabase } from '../../../(sites)/lib/models/mongodb';
 import User from '../../../(sites)/lib/models/users';
 import bcrypt from 'bcryptjs';
 import { NextAuthOptions, RequestInternal } from 'next-auth';
+import GoogleProvider from 'next-auth/providers/google';
 
 interface AuthUser {
   id: string;
   email: string;
 }
 
+// const googleId: string | undefined = process.env.GOOGLE_CLIENT_ID;
+// const googleSecret: string | undefined = process.env.GOOGLE_CLIENT_SECRET;
+
+// if (!googleId && !googleSecret) {
+//   throw new Error("Invalid google auth credentials")
+// }
+
 const Options: NextAuthOptions = {
   providers: [
+    GoogleProvider({
+      clientId: '496438207267-5sm1joa903t9k6ddgv5ulaigq8qvql46.apps.googleusercontent.com',
+      clientSecret: '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'
+    }),
     CredentialsProvider({
       name: 'Credentials',
       credentials: {
