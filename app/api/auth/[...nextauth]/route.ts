@@ -21,8 +21,8 @@ interface AuthUser {
 const Options: NextAuthOptions = {
   providers: [
     GoogleProvider({
-      clientId:'496438207267-5sm1joa903t9k6ddgv5ulaigq8qvql46.apps.googleusercontent.com',
-      clientSecret:'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' ,
+      clientId:'GOOGLE_CLIENT_ID',
+      clientSecret:'GOOGLE_CLIENT_SECRET' ,
     }),
     CredentialsProvider({
       name: 'Credentials',
