@@ -12,5 +12,6 @@ const userSchema = new mongoose.Schema({
         required : true
     }
 },{timestamps: true});
+//relation based user schema ! 
 const User = mongoose.models.user || mongoose.model('user', userSchema);
 module.exports = User 

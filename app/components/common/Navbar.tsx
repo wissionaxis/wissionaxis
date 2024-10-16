@@ -15,7 +15,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const { data } = useSession();
   const userEmail: string | null | undefined = data?.user?.email;
-
+  console.log(data);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -92,7 +92,7 @@ const Navbar = () => {
             {userEmail ? userEmail.split('@')[0] : "Register"}
           </Link>
           <Link
-            href={userEmail ? '#' : "/login"}
+            href={userEmail ? '#' : "/Login"}
             onClick={userEmail ? () => signOut() : undefined}
             className={`ml-10 bg-white text-sm text-blue-600 py-2 px-4 rounded-full hover:bg-gray-100 transition-colors ${pathname === '/login' ? 'text-blue-600' : 'text-gray-400'}`}
           >

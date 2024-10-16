@@ -24,6 +24,10 @@ setformData({
 });
 }
 
+const handleGoogle = async () => {
+  await signIn("google");
+  router.push('/');
+}
 const validation = () => {
 const inputErrors: { [key: string]: string } = {};
 if(!formData.email){
@@ -69,7 +73,7 @@ else
         <div className="p-8">
           <h2 className="text-3xl font-bold mb-4 text-center">Welcome Back!!</h2>
           <p className="mb-4 text-center">Continue with Google or enter your details.</p>
-          <button className="bg-blue-500 text-white py-3 px-6 rounded-lg flex items-center justify-center w-full mb-4">
+          <button className="bg-blue-500 text-white py-3 px-6 rounded-lg flex items-center justify-center w-full mb-4"  onClick={(handleGoogle)}>
             <svg className="w-6 h-6 mr-2" viewBox="0 0 48 48">
               <path fill="#4285F4" d="M24 9.5c3.2 0 6.2 1.2 8.4 3.3l6.2-6.2C34.8 3.3 29.7 1 24 1 14.3 1 6.2 7.3 2.6 15.8l7.3 5.6C12.3 15.7 17.6 9.5 24 9.5z" />
               <path fill="#34A853" d="M24 46c6.1 0 11.1-2 14.8-5.3l-7.1-5.5c-2.1 1.4-4.8 2.3-7.7 2.3-5.8 0-10.7-3.9-12.5-9.2L2.4 32.1C6 40.7 14.8 46 24 46z" />
@@ -94,7 +98,7 @@ else
           </form>
           <div className="text-center">
             <p className="mb-4 ">
-              Dont have an account? <a href="#" className="text-blue-500">Sign Up for free</a>
+              Dont have an account? <a href="/register" className="text-blue-500">Sign Up for free</a>
             </p>
             <p>
               <a href="#" className="text-gray-500">Skip for now →</a>
