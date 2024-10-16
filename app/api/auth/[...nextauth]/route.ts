@@ -11,18 +11,18 @@ interface AuthUser {
   email: string;
 }
 
-// const googleId: string | undefined = process.env.GOOGLE_CLIENT_ID;
-// const googleSecret: string | undefined = process.env.GOOGLE_CLIENT_SECRET;
+const googleId: string | undefined = process.env.GOOGLE_CLIENT_ID;
+const googleSecret: string | undefined = process.env.GOOGLE_CLIENT_SECRET;
 
-// if (!googleId && !googleSecret) {
-//   throw new Error("Invalid google auth credentials")
-// }
+if (!googleId && !googleSecret) {
+  throw new Error("Invalid google auth credentials")
+}
 
 const Options: NextAuthOptions = {
   providers: [
     GoogleProvider({
-      clientId:'GOOGLE_CLIENT_ID',
-      clientSecret:'GOOGLE_CLIENT_SECRET' ,
+      clientId:'googleId',
+      clientSecret:'googleSecret' ,
     }),
     CredentialsProvider({
       name: 'Credentials',
