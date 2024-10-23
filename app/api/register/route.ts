@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from '../../(sites)/lib/models/mongodb';
 import bcrypt from 'bcryptjs';
-import User  from '../../(sites)/lib/models/users';
-import { Meie_Script } from "next/font/google";
-import { MdOutlineKayaking } from "react-icons/md";
+import User from '../../(sites)/lib/models/users';
 
 const url = 'mongodb+srv://lakshmithanuja694:muoAzPY1veUsdO5u@cluster0.0s4lo.mongodb.net/project';
 
@@ -16,15 +14,15 @@ export const POST = async (req: NextRequest) => {
         const password = body.password;
 
         if (!email || !password) {
-            return NextResponse.json({ message: 'Invalid input' });
+            return NextResponse.json({ message: 'Invalid input' }, { status: 400 });
         }
 
         await connectToDatabase();
 
-        const existing = await User.findOne({ email }); // here i'm checking if that email exists
+        const existing = await User.findOne({ email });
 
         if (existing) {
-            return NextResponse.json({ message: 'User exists already!' });
+            return NextResponse.json({ message: 'User exists already!' }, { status: 409 });
         }
 
         const hashedPassword = await bcrypt.hash(password, 12);
@@ -34,11 +32,12 @@ export const POST = async (req: NextRequest) => {
             password: hashedPassword,
         });
 
-        await newUser.save(); // if the user is new ...save karke
+        await newUser.save();
 
-        return NextResponse.json({ message: 'User created successfully!' });
+        return NextResponse.json({ message: 'User created successfully!' }, { status: 201 });
+
     } catch (error) {
         console.error(error);
-        return NextResponse.json({ message: 'Something went wrong' });
+        return NextResponse.json({ message: 'Something went wrong' }, { status: 500 });
     }
 };

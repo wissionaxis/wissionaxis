@@ -14,15 +14,16 @@ interface AuthUser {
 const googleId: string | undefined = process.env.GOOGLE_CLIENT_ID;
 const googleSecret: string | undefined = process.env.GOOGLE_CLIENT_SECRET;
 
-if (!googleId && !googleSecret) {
-  throw new Error("Invalid google auth credentials")
+if (!googleId || !googleSecret) {
+  throw new Error("Invalid Google auth credentials");
 }
 
 const Options: NextAuthOptions = {
   providers: [
     GoogleProvider({
-      clientId:'googleId',
-      clientSecret:'googleSecret' ,
+      clientId: googleId,
+      clientSecret: googleSecret,
+      authorization: { params: { redirect_uri: 'http://localhost:3000/api/auth/callback/google' } },
     }),
     CredentialsProvider({
       name: 'Credentials',
@@ -30,19 +31,16 @@ const Options: NextAuthOptions = {
         email: { label: 'Email', type: 'email' },
         password: { label: 'Password', type: 'password' },
       },
-      async authorize(
-        credentials: Record<'email' | 'password', string> | undefined,
-        req: Pick<RequestInternal, 'body' | 'query' | 'headers' | 'method'>
-      ): Promise<AuthUser | null> {
+      async authorize(credentials: Record<'email' | 'password', string> | undefined, req: Pick<RequestInternal, 'body' | 'query' | 'headers' | 'method'>): Promise<AuthUser | null> {
         if (!credentials) {
-          throw new Error('No credentials provided');
+          return null;
         }
 
-        const client = await connectToDatabase();
+        await connectToDatabase();
         const user = await User.findOne({ email: credentials.email });
 
         if (!user) {
-          throw new Error('No user found with that email');
+          return null;
         }
 
         const comparePassword = await bcrypt.compare(credentials.password, user.password);
@@ -50,7 +48,7 @@ const Options: NextAuthOptions = {
         if (comparePassword) {
           return { email: user.email, id: user._id };
         } else {
-          throw new Error('Invalid email or password');
+          return null;
         }
       },
     }),

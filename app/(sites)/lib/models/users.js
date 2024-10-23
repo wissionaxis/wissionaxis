@@ -10,8 +10,13 @@ const userSchema = new mongoose.Schema({
     {
         type : String,
         required : true
+    } ,
+    googleId :{
+        type :String,
+        unique :true,
+        sparse : true
     }
 },{timestamps: true});
-//relation based user schema ! 
+
 const User = mongoose.models.user || mongoose.model('user', userSchema);
 module.exports = User 
