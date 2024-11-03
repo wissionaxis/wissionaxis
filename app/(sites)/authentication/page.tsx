@@ -90,7 +90,10 @@ const RegisterPage: React.FC = () => {
             <span
               className='cursor-pointer hover:bg-black opacity-80 spanArrow
             transition-all relative w-14 h-full flex-center selection:bg-none rounded-full'
-              onClick={() => { window.history.back() }}
+            onClick={(e) => {
+              e.preventDefault();
+              window.history.back();
+            }}
             >
               <MoveLeft className=" opacity-60 arrowIcon" size={30} />
             </span>

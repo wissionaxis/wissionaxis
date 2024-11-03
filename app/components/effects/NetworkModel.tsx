@@ -4,9 +4,9 @@ import Spline from '@splinetool/react-spline/next';
 
 const NetworkModel = () => {
     return (
-        <main className='lg:w-[25%] relative'>
+        <main className='absolute lg:h-[110vh] md:[60vh] max-md:hidden -z-10 flex-center w-full top-0 left-0 animateSpin'>
             <Spline
-                scene="https://prod.spline.design/fmFIPVbrxgsx4pFv/scene.splinecode"
+                scene="https://prod.spline.design/FRepuJTDvMx5K5z5/scene.splinecode"
             />
         </main>
     );

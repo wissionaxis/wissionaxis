@@ -35,6 +35,12 @@ const NetworkBuildScale = () => {
     }
   ];
 
+  useEffect(()=>{
+
+  },[])
+
+
+
   return (
     <section className="py-1 text-center">
       <h2 className="font-medium max-md:px-5 mb-8 overflow-hidden text-left fonter max-md:leading-[3rem] leading-[4.5rem] pl-20">

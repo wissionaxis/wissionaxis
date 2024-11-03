@@ -8,6 +8,7 @@ import founderImage from '@/app/assets/images/e3.jpg';
 import teamMemberImage from '@/app/assets/images/teamMember.jpg';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import NetworkModel from '@/app/components/effects/NetworkModel';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,12 +46,15 @@ const App = () => {
 
   return (
     <section className="relative w-full px-16 max-sm:p-6 py-5 mainContainer">
+      <div className="absolute top-0 left-0 overflow-hidden h-screen  w-full">
+        <NetworkModel />
+      </div>
       <div className="md:mt-10 relative w-full">
         <p className='lg:text-8xl uppercase lg:w-5/6 md:text-6xl max-md:text-5xl max-sm:text-3xl relative font-normal'>
           Building a Vibrant and Innovative <span className='textColor'>Entrepreneurial Ecosystem</span>→ for a Sustainable Future India
         </p>
       </div>
-      <div className=" w-full relative h-24 flex justify-end max-lg:mt-14 mt-20">
+      <div className=" w-full relative h-24 flex justify-end max-md:mt-14 md:mt-36">
         <p className='lg:w-1/3 relative lg:mr-10'>
           Under the name Wissionaire, our company was founded in 2017 to advance entrepreneurship in the future by guiding young people with a strong sense of purpose and a well-connected community.
         </p>
@@ -82,7 +86,9 @@ const App = () => {
           />
         </div>
         <div className="lg:w-[45%] relative h-full max-lg:mt-10">
-           <p className='text-indent text-lg lg:leading-10 max-md:text-md max-lg:leading-7'>"Prudhvi, the visionary founder of Wission Axis, has dedicated his career to fostering entrepreneurship and innovation. With a profound understanding of the challenges faced by aspiring entrepreneurs, he established Wission Axis in 2017 to empower young minds with the tools and resources necessary for success. Under his leadership, Wission Axis has evolved into a vibrant community that nurtures talent, promotes collaboration, and drives sustainable growth."</p>
+          <p className='text-indent text-lg lg:leading-10 max-md:text-md max-lg:leading-7'>
+            {'"'}Prudhvi, the visionary founder of Wission Axis, has dedicated his career to fostering entrepreneurship and innovation. With a profound understanding of the challenges faced by aspiring entrepreneurs, he established Wission Axis in 2017 to empower young minds with the tools and resources necessary for success. Under his leadership, Wission Axis has evolved into a vibrant community that nurtures talent, promotes collaboration, and drives sustainable growth.{'"'}
+          </p>
         </div>
       </div>
     </section>
