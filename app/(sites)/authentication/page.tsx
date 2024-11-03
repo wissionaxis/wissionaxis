@@ -14,6 +14,7 @@ const RegisterPage: React.FC = () => {
     password: '',
     confirmpassword: ''
   });
+  const text: string[] = ["Sign", isLogin ? "In" : "Up", "or", "Join", "Our", "Pioneer", "Network"]
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const change = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -92,7 +93,16 @@ const RegisterPage: React.FC = () => {
             </span>
           </div>
           <div className="relative mt-4">
-            <p className='lg:text-7xl md:text-5xl max-md:text-3xl uppercase leading-[80px] font-semibold opacity-90'>{isLogin ? 'Sign In' : 'Sign Up'} or Join Our Pioneer Network</p>
+            <p className="lg:text-7xl md:text-5xl max-md:text-3xl uppercase leading-[80px] font-semibold flex flex-wrap gap-2">
+              {text.map((word, index) => (
+                <span
+                  key={index}
+                  className="grpHover "
+                >
+                  {word}
+                </span>
+              ))}
+            </p>
           </div>
           <div className="relative mt-10">
             <p>Connect with like-minded professionals and Participate in industry events and conferences to expand your network.</p>

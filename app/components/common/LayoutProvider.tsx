@@ -11,9 +11,9 @@ const LayoutProvider = ({children}:Child) => {
     console.log(path)
   return (
    <>
-   {path !== '/Login' && path !== '/register' && <Navbar/>}
+   {path !== '/authentication' && <Navbar/>}
    {children}
-   {path !== '/Login' && path !== '/register' && <Footer/>}
+   {path !== '/authentication' && <Footer/>}
    </>
   )
 }

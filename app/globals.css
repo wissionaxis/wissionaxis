@@ -4,7 +4,7 @@
 
 :where(body, html) {
   overflow-x: hidden;
- 
+
 }
 
 :where(body, html)::-webkit-scrollbar {
@@ -16,7 +16,7 @@ img {
   height: 100%;
 }
 
-body{
+body {
   background-color: #ffffff;
 }
 
@@ -28,10 +28,10 @@ body{
 
 @layer utilities {
 
-  .textColor{
+  .textColor {
     background: linear-gradient(90deg, #7092D3 0%, #3C424E 100%);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
 
@@ -58,7 +58,8 @@ body{
     align-items: center;
     justify-content: space-evenly;
   }
-  .BoxShadow{
+
+  .BoxShadow {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   }
 
@@ -106,22 +107,24 @@ body{
     border-radius: 10px;
     /* border: 1px solid rgba(255, 255, 255, 0.18); */
   }
- 
+
   .text-indent {
-    text-indent: 6.7rem; 
+    text-indent: 6.7rem;
   }
 
 }
-.bottom-liner{
+
+.bottom-liner {
   padding: 14px;
   border-bottom: 2px solid #3560B3;
 }
 
-.fonter{
-  font-size: clamp(25px,4vw,60px);
+.fonter {
+  font-size: clamp(25px, 4vw, 60px);
 }
-.fonterh{
-  font-size: clamp(25px,4vw,35px);
+
+.fonterh {
+  font-size: clamp(25px, 4vw, 35px);
 }
 
 .animated-button {
@@ -219,6 +222,7 @@ body{
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -229,15 +233,24 @@ body{
   animation: scroll 20s linear infinite;
 }
 
-.eventImages > img {
+.eventImages>img {
   border-radius: 1px !important;
 }
 
-.Scroller::-webkit-scrollbar{
+.Scroller::-webkit-scrollbar {
   width: 0 !important;
 }
 
-.spanArrow:hover > .arrowIcon {
+.spanArrow:hover>.arrowIcon {
   color: white;
   opacity: 1;
+}
+
+.grpHover{
+  transition: all;
+  opacity: 0.9;
+}
+
+.grpHover:hover > :not(:hover){
+  opacity: 0.5 !important;
 }

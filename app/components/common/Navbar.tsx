@@ -20,43 +20,6 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-    if (isOpen) {
-      gsap.to('.navHeight', {
-        height: '33vh',
-        ease: 'Power4.easeInOut',
-        duration: 0.3,
-        delay: 0.1
-      });
-    } else {
-      gsap.to('.navHeight', {
-        height: '0',
-        ease: 'Power4.easeInOut',
-        duration: 1,
-        border: 'none'
-      });
-    }
-  }, [isOpen]);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (section) {
-      gsap.fromTo(
-        section,
-        {
-          opacity: 0,
-          y: 400,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 2,
-          ease: Power1.easeInOut,
-        }
-      );
-    }
-  }, []);
-
   const Links: LinksType[] = [
     { name: 'Home', linked: '/' },
     { name: 'Membership', linked: '/membership' },
@@ -86,17 +49,10 @@ const Navbar = () => {
         </div>
         <div className="hidden md:block">
           <Link
-            href={userEmail ? '#' : "/register"}
+            href={userEmail ? '#' : "/authentication"}
             className={`bg-[#3560B3] text-sm text-blue-600 py-2 px-4 rounded-full transition-colors ${pathname === '/register' ? 'text-blue-600' : 'text-white'}`}
           >
-            {userEmail ? userEmail.split('@')[0] : "Register"}
-          </Link>
-          <Link
-            href={userEmail ? '#' : "/Login"}
-            onClick={userEmail ? () => signOut() : undefined}
-            className={`ml-10 bg-[#3560B3] text-sm text-blue-600 py-2 px-4 rounded-full  transition-colors ${pathname === '/login' ? 'text-blue-600' : 'text-white'}`}
-          >
-            {userEmail ? "SignOut" : "Login"}
+            {userEmail ? userEmail.split('@')[0] : "Register / Login"}
           </Link>
         </div>
         <div className="md:hidden">
@@ -118,11 +74,11 @@ const Navbar = () => {
           ))}
           {isOpen && (
             <Link
-              href={userEmail ? '#' : "/register"}
+              href={userEmail ? '#' : "/authentication"}
               onClick={userEmail ? () => signOut() : undefined}
               className={`block mb-3 bg-[#3560B3] text-blue-600 py-2 px-4 rounded-full hover:bg-gray-100 transition-colors mt-2 ${pathname === '/register' ? 'text-blue-600' : 'text-gray-400'}`}
             >
-              {userEmail ? "SignOut" : "Register"}
+              {userEmail ? "SignOut" : "Register / Login"}
             </Link>
           )}
         </div>
