@@ -40,7 +40,7 @@ const OurEvents = () => {
   }, []);
 
   return (
-    <section className="py-16 px-10">
+    <section className="py-16 px-10 mt-20">
       <div className="w-full relative h-10 p-3 mb-10 md:hidden">
         <h3 className='text-2xl font-semibold'>Our Events</h3>
       </div>

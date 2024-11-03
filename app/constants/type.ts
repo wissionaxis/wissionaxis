@@ -8,3 +8,10 @@ export interface SectionType{
     title:string,
     description:string
 }
+
+export interface Section {
+  heading: string;
+  description: string;
+  icon: React.ReactNode;
+}
+
