@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { MoveLeft } from 'lucide-react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
+import Model from '@/app/components/effects/Model';
 
 const RegisterPage: React.FC = () => {
   const router = useRouter();
@@ -80,7 +82,8 @@ const RegisterPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex relative max-md:flex-col">
+    <div className="min-h-screen flex relative max-md:flex-col overflow-hidden">
+      <Model />
       <div className="md:w-1/2 flex justify-center max-md:h-[40vh] h-screen gap-3 items-center relative ">
         <div className="h-1/2 relative w-5/6  max-sm:-mt-10">
           <div className="relative h-14 flex -mt-5">
@@ -116,19 +119,19 @@ const RegisterPage: React.FC = () => {
           <form className="space-y-4" onSubmit={onSubmitOfForm} method='post'>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email address</label>
-              <input type="email" id="email" name="email" value={formData.email} onChange={change} className="mt-1 p-2 block w-full border border-gray-300 rounded-md" required />
+              <input type="email" id="email" name="email" value={formData.email} onChange={change} className="mt-1 p-2 block w-full border-none outline-none  rounded-md" required />
               {errors.email ? <p className="text-red-500 text-sm">{errors.email}</p> : null}
             </div>
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
-              <input type="password" id="password" name="password" value={formData.password} onChange={change} className="mt-1 p-2 block w-full border border-gray-300 rounded-md" required />
+              <input type="password" id="password" name="password" value={formData.password} onChange={change} className="mt-1 p-2 block w-full border-none outline-none rounded-md" required />
               {errors.password ? <p className="text-red-500 text-sm">{errors.password}</p> : null}
             </div>
             {
               !isLogin &&
               <div>
                 <label htmlFor="confirmpassword" className="block text-sm font-medium text-gray-700">Confirm Password</label>
-                <input type="password" id="confirmpassword" name="confirmpassword" value={formData.confirmpassword} onChange={change} className="mt-1 p-2 block w-full border border-gray-300 rounded-md" required />
+                <input type="password" id="confirmpassword" name="confirmpassword" value={formData.confirmpassword} onChange={change} className="mt-1 p-2 block w-full border-none outline-none  rounded-md" required />
                 {errors.confirmpassword ? <p className="text-red-500 text-sm">{errors.confirmpassword}</p> : null}
               </div>
             }

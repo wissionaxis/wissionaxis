@@ -27,7 +27,7 @@ const NetworkBuildScale = () => {
     if (section && network && learn && build) {
       t1.fromTo(section, {
         opacity: 0,
-        y: 300,
+        y: 120,
       }, {
         opacity: 1,
         y: 0,
@@ -67,7 +67,7 @@ const NetworkBuildScale = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 text-center">
+    <section ref={sectionRef} className="py-1 text-center">
       <h2 className="font-medium max-md:px-10 mb-8 overflow-hidden text-left fonter max-md:leading-[3rem] leading-[4.5rem] pl-20">
         Network, Learn, <br />Build, Scale.
       </h2>

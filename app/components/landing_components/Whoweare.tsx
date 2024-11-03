@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,10 +46,10 @@ const WhoWeAre = () => {
           </p>
         </div>
         <div className="mt-10 relative h-10 flex items-end justify-end">
-          <div className="flex-bet w-1/12  h-full">
+          <Link href={"/about"} className="flex-bet w-1/12  h-full">
             <p>Explore</p>
             <span>➝</span>
-          </div>
+          </Link>
         </div>
       </div>
     </section>

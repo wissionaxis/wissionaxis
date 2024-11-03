@@ -1,11 +1,13 @@
+'use client';
+import React from 'react';
 import Spline from '@splinetool/react-spline/next';
 
-export default function Model() {
+const Model = () => {
   return (
-    <main className='absolute top-0 left-0 h-screen w-full'>
-      <Spline
-        scene="https://prod.spline.design/4WGT0x91kR92YHzL/scene.splinecode" 
-      />
+    <main className="absolute top-0 left-0 h-[110vh] w-full -z-10">
+      <Spline scene="https://prod.spline.design/4WGT0x91kR92YHzL/scene.splinecode" />
     </main>
   );
-}
+};
+
+export default React.memo(Model);

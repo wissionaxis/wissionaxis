@@ -13,6 +13,7 @@
     "@next-auth/prisma-adapter": "^1.0.7",
     "@next/font": "^14.2.15",
     "@splinetool/react-spline": "^4.0.0",
+    "@splinetool/runtime": "^1.9.35",
     "@studio-freight/react-lenis": "^0.0.47",
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
