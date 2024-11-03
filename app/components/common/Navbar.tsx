@@ -66,19 +66,19 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="flex items-center overflow-hidden z-[999] justify-center h-[16vh] w-full p-3 relative bg-white">
-      <nav className="bg-[#3560B3] w-[95vw] p-6 flex justify-between items-center rounded-full shadow-md" ref={sectionRef}>
-        <div className="flex items-center text-white text-2xl font-bold">
+    <header className="flex items-center overflow-hidden z-[999] justify-center h-[16vh] w-full p-3 relative ">
+      <nav className=" w-[95vw] p-6 flex justify-between items-center rounded-full " ref={sectionRef}>
+        <div className="flex items-center text-black text-2xl font-bold">
           <Link href="/" className="flex items-center h-[1.2rem] ml-3">
             <Image src={Logo} alt="Logo" width={40} height={40} className="h-auto w-auto" />
           </Link>
         </div>
-        <div className="hidden md:flex space-x-12 text-white">
+        <div className="hidden md:flex space-x-12 text-black">
           {Links.map((t: LinksType, index: number) => (
             <Link
               href={t.linked}
               key={index}
-              className={`transition-colors text-[0.99rem] font-light ${pathname === t.linked ? 'text-white' : 'text-gray-400'} hover:text-white`}
+              className={`transition-colors text-[0.99rem] font-light ${pathname === t.linked ? 'text-black' : 'text-gray-400'} hover:text-black`}
             >
               {t.name}
             </Link>
@@ -87,14 +87,14 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Link
             href={userEmail ? '#' : "/register"}
-            className={`bg-white text-sm text-blue-600 py-2 px-4 rounded-full hover:bg-gray-100 transition-colors ${pathname === '/register' ? 'text-blue-600' : 'text-gray-400'}`}
+            className={`bg-[#3560B3] text-sm text-blue-600 py-2 px-4 rounded-full transition-colors ${pathname === '/register' ? 'text-blue-600' : 'text-white'}`}
           >
             {userEmail ? userEmail.split('@')[0] : "Register"}
           </Link>
           <Link
             href={userEmail ? '#' : "/Login"}
             onClick={userEmail ? () => signOut() : undefined}
-            className={`ml-10 bg-white text-sm text-blue-600 py-2 px-4 rounded-full hover:bg-gray-100 transition-colors ${pathname === '/login' ? 'text-blue-600' : 'text-gray-400'}`}
+            className={`ml-10 bg-[#3560B3] text-sm text-blue-600 py-2 px-4 rounded-full  transition-colors ${pathname === '/login' ? 'text-blue-600' : 'text-white'}`}
           >
             {userEmail ? "SignOut" : "Login"}
           </Link>
@@ -120,7 +120,7 @@ const Navbar = () => {
             <Link
               href={userEmail ? '#' : "/register"}
               onClick={userEmail ? () => signOut() : undefined}
-              className={`block mb-3 bg-white text-blue-600 py-2 px-4 rounded-full hover:bg-gray-100 transition-colors mt-2 ${pathname === '/register' ? 'text-blue-600' : 'text-gray-400'}`}
+              className={`block mb-3 bg-[#3560B3] text-blue-600 py-2 px-4 rounded-full hover:bg-gray-100 transition-colors mt-2 ${pathname === '/register' ? 'text-blue-600' : 'text-gray-400'}`}
             >
               {userEmail ? "SignOut" : "Register"}
             </Link>

@@ -106,20 +106,7 @@ body{
     border-radius: 10px;
     /* border: 1px solid rgba(255, 255, 255, 0.18); */
   }
-  .ScrollerColor::-webkit-scrollbar{
-    width: 10px;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-  .ScrollerColor::-webkit-scrollbar-track{
-    width: 10px;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-  .Scroller::-webkit-scrollbar-thumb{
-    background-color: #000;
-    width: 10px;
-  }
+ 
 
 }
 .bottom-liner{
@@ -237,4 +224,12 @@ body{
 .animate-scroll {
   display: flex;
   animation: scroll 20s linear infinite;
+}
+
+.eventImages > img {
+  border-radius: 1px !important;
+}
+
+.Scroller::-webkit-scrollbar{
+  width: 0 !important;
 }

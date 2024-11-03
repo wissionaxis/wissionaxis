@@ -21,7 +21,6 @@ const NetworkBuildScale = () => {
       scrollTrigger: {
         trigger: section,
         start: 'top 60%',
-        toggleActions: 'play none none none',
       },
     });
 
@@ -33,7 +32,6 @@ const NetworkBuildScale = () => {
         opacity: 1,
         y: 0,
         duration: 1,
-        delay: 0.2,
         stagger: 0.3,
       })
       .fromTo(network, {

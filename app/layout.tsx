@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "./components/effects/SmoothScroll";
 import LayoutProvider from "./components/common/LayoutProvider";
 import Providers from "./components/user/Providers";
+import { poppin } from "./constants";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${poppin.className}`}>
         <Providers>        
           <SmoothScroll>
           <LayoutProvider>
