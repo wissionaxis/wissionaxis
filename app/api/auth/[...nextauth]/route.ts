@@ -54,7 +54,7 @@ const Options: NextAuthOptions = {
     }),
   ],
   pages: {
-    signIn: '/Login',
+    signIn: '/authentication',
   },
   session: {
     strategy: 'jwt',

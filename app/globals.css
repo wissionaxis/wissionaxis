@@ -236,3 +236,8 @@ body{
 .Scroller::-webkit-scrollbar{
   width: 0 !important;
 }
+
+.spanArrow:hover > .arrowIcon {
+  color: white;
+  opacity: 1;
+}

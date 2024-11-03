@@ -28,6 +28,7 @@ const handleGoogle = async () => {
   await signIn("google");
   router.push('/');
 }
+
 const validation = () => {
 const inputErrors: { [key: string]: string } = {};
 if(!formData.email){
