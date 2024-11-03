@@ -42,7 +42,7 @@ const OurEvents = () => {
   return (
     <section className="py-16 px-10">
       <div className="w-full relative h-10 p-3 mb-10 md:hidden">
-        <p>wcwevuqrwn3hwik</p>
+      <h3 className='text-2xl font-semibold'>Our Events</h3>
       </div>
       <div className="flex relative h-[60vh] p-3 justify-evenly overflow-hidden">
         <div className="w-1/4 relative h-full max-md:hidden flex items-end">
