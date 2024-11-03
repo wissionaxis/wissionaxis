@@ -48,16 +48,14 @@ const Home = () => {
       opacity: 1,
       duration: 1,
       ease:Power2.easeInOut,
-      delay: 0.5,
     }).fromTo('.Hero-Header p', {
       translateX: '-200px',
       opacity: 0,
     }, {
       translateX: '0',
       opacity: 1,
-      duration: 1,
+      duration: 0.3,
       ease:'power1.inOut',
-      delay: 0.3,
     }).fromTo('.section-card', {
       opacity: 0,
       y: 50,
@@ -77,7 +75,6 @@ const Home = () => {
       duration: 1,
       stagger: 0.3,
       ease: 'power4.out',
-      delay:0.4
     })
     .fromTo('.animated-image', {
       opacity: 0,
@@ -88,7 +85,6 @@ const Home = () => {
       duration: 1,
       stagger: 0.3,
       ease: 'power4.out',
-      delay:0.4
     });
   }, []);
 

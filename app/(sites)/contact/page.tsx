@@ -2,10 +2,10 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <section className="relative  w-full px-16 max-sm:p-5 py-5 ">
+    <section className="relative  w-full px-16 max-sm:p-5 mb-10 py-5 overflow-hidden">
       <div className="w-2/3 max-lg:w-full relative  mt-5 leading-10">
         <p className='font-normal uppercase leading-[7vh] max-lg:leading-10 max-md:text-2xl max-lg:text-3xl text-[2.5rem]'>
-          (Contact us) → You have questions, comments or general Inquiries? We value your suggestions ● Drop us a line!
+          (<span className='textColor'>Contact us</span>) → You have questions, comments or general Inquiries? We value your suggestions ● Drop us a line!
         </p>
       </div>
       <div className="flex justify-between w-full max-lg:flex-col  mt-10 ">
