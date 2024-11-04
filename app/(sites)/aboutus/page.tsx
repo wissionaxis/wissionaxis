@@ -46,9 +46,9 @@ const App = () => {
 
   return (
     <section className="relative w-full px-16 max-sm:p-6 py-5 mainContainer">
-      <div className="absolute top-0 left-0 overflow-hidden h-screen  w-full">
+      {/* <div className="absolute top-0 left-0 overflow-hidden h-screen  w-full">
         <NetworkModel />
-      </div>
+      </div> */}
       <div className="md:mt-10 relative w-full">
         <p className='lg:text-8xl uppercase lg:w-5/6 md:text-6xl max-md:text-5xl max-sm:text-3xl relative font-normal'>
           Building a Vibrant and Innovative <span className='textColor'>Entrepreneurial Ecosystem</span>→ for a Sustainable Future India
