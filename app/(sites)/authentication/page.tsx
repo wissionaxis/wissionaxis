@@ -27,9 +27,9 @@ const RegisterPage: React.FC = () => {
     });
   };
 
-  const handleGoogle = async (e:FormEvent) => {
+  const handleGoogle = async (e: FormEvent) => {
     e.preventDefault();
-    await signIn("google");
+    await signIn("google", { redirect: false ,callbackUrl:'/' });
     router.push('/');
   }
 
@@ -92,10 +92,10 @@ const RegisterPage: React.FC = () => {
             <span
               className='cursor-pointer hover:bg-black opacity-80 spanArrow
             transition-all relative w-14 h-full flex-center selection:bg-none rounded-full'
-            onClick={(e) => {
-              e.preventDefault();
-              window.history.back();
-            }}
+              onClick={(e) => {
+                e.preventDefault();
+                window.history.back();
+              }}
             >
               <MoveLeft className=" opacity-60 arrowIcon" size={30} />
             </span>
