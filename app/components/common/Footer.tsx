@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
 
           </div>
           <div className="flex flex-col w-1/2 items-center md:items-start space-y-2 text-center md:text-left mt-4 md:mt-0">
-            <p>Let's grab some coffee.</p>
+            <p>Let{"'"}s grab some coffee.</p>
             <p>We are based in Los Angeles but often come to San Francisco ☕</p>
           </div>
         </div>

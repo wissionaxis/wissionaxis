@@ -46,7 +46,7 @@ const WhoWeAre = () => {
           </p>
         </div>
         <div className="mt-10 mb-5 relative h-10 flex items-end justify-end">
-          <Link href={"/about"} className="flex-bet md:w-1/12  h-full">
+          <Link href={"/aboutus"} className="flex-bet md:w-1/12  h-full">
             <p>Explore</p>
             <span>➝</span>
           </Link>

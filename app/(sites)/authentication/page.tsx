@@ -1,12 +1,13 @@
 "use client";
 import axios from 'axios';
-import React from 'react';
+import React, { FormEvent } from 'react';
 import { useState } from 'react';
 import { MoveLeft } from 'lucide-react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
-import Model from '@/app/components/effects/Model';
+// import Model from '@/app/components/effects/Model';
+const Model = dynamic(() => import('@/app/components/effects/Model'), { ssr: false });
 
 const RegisterPage: React.FC = () => {
   const router = useRouter();
@@ -26,7 +27,8 @@ const RegisterPage: React.FC = () => {
     });
   };
 
-  const handleGoogle = async () => {
+  const handleGoogle = async (e:FormEvent) => {
+    e.preventDefault();
     await signIn("google");
     router.push('/');
   }
@@ -153,7 +155,7 @@ const RegisterPage: React.FC = () => {
           <div className="mt-4">
             <button
               onClick={handleGoogle}
-              className="w-full py-2 px-4 hover:bg-gray-400 hover:text-white border border-[#3560B3] text- rounded-md flex-center"
+              className="w-full py-2 px-4 hover:text-white border border-[#3560B3] hover:bg-[#4361c5b8] hover:border-none text- rounded-md flex-center"
             >
               <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google logo" className="w-6 h-6 mr-2" />
               {isLogin ? 'Log in' : 'Sign up'} with Google

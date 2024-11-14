@@ -16,9 +16,9 @@ const Cta = () => {
           <input
             type="email"
             placeholder="Enter your email"
-            className="px-4 py-2 w-full max-w-sm rounded-md border-none border-gray-300 text-center sm:text-left sm:rounded-l-md"
+            className="px-4 py-2 w-full max-w-sm outline-none rounded-md border-none border-gray-300 text-center sm:text-left sm:rounded-l-md"
           />
-          <button className="bg-[#3b82f6] text-white px-4 py-2 w-1/6 max-w-xs rounded-md sm:rounded-r-md sm:rounded-l-none">
+          <button className="bg-[#3b82f6] text-white px-4 py-2 w-1/6 max-md:mt-5 max-w-sm max-md:w-1/2 rounded-md sm:rounded-r-md sm:rounded-l-none">
             Subscribe Now
           </button>
         </div>
