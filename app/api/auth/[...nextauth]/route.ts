@@ -5,12 +5,10 @@ import User from '../../../(sites)/lib/models/users';
 import bcrypt from 'bcryptjs';
 import { NextAuthOptions, RequestInternal } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
-
 interface AuthUser {
   id: string;
   email: string;
 }
-
 const googleId: string | undefined = process.env.GOOGLE_CLIENT_ID;
 const googleSecret: string | undefined = process.env.GOOGLE_CLIENT_SECRET;
 
@@ -35,10 +33,8 @@ const Options: NextAuthOptions = {
         if (!credentials) {
           return null;
         }
-
         await connectToDatabase();
         const user = await User.findOne({ email: credentials.email });
-
         if (!user) {
           return null;
         }
