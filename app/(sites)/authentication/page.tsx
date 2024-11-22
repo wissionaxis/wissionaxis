@@ -84,9 +84,9 @@ const RegisterPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex relative max-md:flex-col overflow-hidden">
+    <div className="min-h-screen flex relative max-md:flex-col max-sm:justify-center overflow-hidden">
       <Model />
-      <div className="md:w-1/2 flex justify-center max-md:h-[40vh] h-screen gap-3 items-center relative ">
+      <div className="md:w-1/2 flex justify-center max-md:h-[40vh] max-sm:hidden h-screen gap-3 items-center relative ">
         <div className="h-1/2 relative w-5/6  max-sm:-mt-10">
           <div className="relative h-14 flex -mt-5">
             <span
@@ -94,7 +94,7 @@ const RegisterPage: React.FC = () => {
             transition-all relative w-14 h-full flex-center selection:bg-none rounded-full'
               onClick={(e) => {
                 e.preventDefault();
-                window.history.back();
+                 window.location.href = '/'
               }}
             >
               <MoveLeft className=" opacity-60 arrowIcon" size={30} />

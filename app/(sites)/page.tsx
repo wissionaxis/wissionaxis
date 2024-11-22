@@ -36,10 +36,9 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    // Check if animation has already occurred
     if (localStorage.getItem('hasAnimated')) {
       setHasAnimated(true);
-      return; // Skip animation if already triggered
+      return; 
     }
 
     const tl = gsap.timeline();
@@ -88,7 +87,6 @@ const Home = () => {
       ease: 'power4.out',
     });
 
-    // After animation, mark it as completed in localStorage
     localStorage.setItem('hasAnimated', 'true');
     setHasAnimated(true);
   }, []);

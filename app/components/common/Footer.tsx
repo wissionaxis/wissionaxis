@@ -7,14 +7,14 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-[#3560B3] text-white py-8 px-4 lg:px-16">
       <div className="container mx-auto flex flex-col md:flex-row justify-between ">
-        <div className="flex flex-col justify-between space-y-2 mb-4  md:mb-0">
+        <div className="flex md:flex-col justify-between mb-4 max-md:items-center  flex-1 flex-wrap gap-4">
           <Link href="#" className="hover:underline">Work</Link>
           <Link href="#" className="hover:underline">Our story</Link>
           <Link href="#" className="hover:underline">Insights</Link>
           <Link href="#" className="hover:underline">Connect</Link>
         </div>
 
-        <div className="flex w-1/2 justify-evenly relative ">
+        <div className="flex md:w-1/2 justify-evenly max-md:flex-col relative max-md:mt-10 ">
           <div className="flex flex-col space-y-2 text-center md:text-left">
             <Link href="#" className="hover:underline">LinkedIn</Link>
             <Link href="#" className="hover:underline">Instagram</Link>
@@ -23,8 +23,8 @@ const Footer: React.FC = () => {
             <Link href={"mailto:wfw@gmail.com"} className='mt-20'>abc@gmail.com</Link>
 
           </div>
-          <div className="flex flex-col w-1/2 items-center md:items-start space-y-2 text-center md:text-left mt-4 md:mt-0">
-            <p>Let{"'"}s grab some coffee.</p>
+          <div className="flex flex-col md:w-1/2 items-center md:items-start space-y-2 text-center md:text-left mt- 6 md:mt-0">
+            <p className='max-md:mt-6'>Let{"'"}s grab some coffee.</p>
             <p>We are based in Los Angeles but often come to San Francisco ☕</p>
           </div>
         </div>
