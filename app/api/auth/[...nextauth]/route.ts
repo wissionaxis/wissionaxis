@@ -3,6 +3,8 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import { connectToDatabase } from '../../../(sites)/lib/models/mongodb';
 import User from '../../../(sites)/lib/models/users';
 import bcrypt from 'bcryptjs';
+import redis from '@/app/(sites)/lib/models/redisdb';
+import { UpstashRedisAdapter } from '@auth/upstash-redis-adapter'
 import { NextAuthOptions, RequestInternal } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 interface AuthUser {
@@ -17,6 +19,7 @@ if (!googleId || !googleSecret) {
 }
 
 const Options: NextAuthOptions = {
+  adapter: UpstashRedisAdapter(redis),
   providers: [
     GoogleProvider({
       clientId: googleId,
@@ -32,6 +35,11 @@ const Options: NextAuthOptions = {
       async authorize(credentials: Record<'email' | 'password', string> | undefined, req: Pick<RequestInternal, 'body' | 'query' | 'headers' | 'method'>): Promise<AuthUser | null> {
         if (!credentials) {
           return null;
+        }
+        const redisUser = await redis.get(`user:${credentials.email}`);
+        if(redisUser){
+          console.log(`User ${credentials.email} found in Redis cache`);
+          return {email:credentials.email,id:redisUser as string};
         }
         await connectToDatabase();
         const user = await User.findOne({ email: credentials.email });

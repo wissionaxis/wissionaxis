@@ -81,7 +81,7 @@ const Navbar = () => {
             <Link
               href={t.linked}
               key={index}
-              className={`text-white hover:text-gray-300 transition-colors p-2 w-full ${pathname === t.linked ? 'text-white' : 'text-gray-400'} ${index === 0 && 'mt-3'}`}
+              className={`text-white  p-2 w-full ${pathname === t.linked ? 'text-white' : 'text-gray-400'} ${index === 0 && 'mt-3'}`}
             >
               {t.name}
             </Link>
@@ -90,7 +90,7 @@ const Navbar = () => {
             <Link
               href={userEmail ? '#' : "/authentication"}
               onClick={userEmail ? () => signOut() : undefined}
-              className={`block mb-3 bg-[#3560B3] text-white py-2 ml-2 rounded-full hover:bg-gray-100 transition-colors`}
+              className={`block mb-3 bg-[#3560B3] text-white py-2 ml-2 rounded-full`}
             >
               {userEmail ? "SignOut" : "Register / Login"}
             </Link>
